@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cons_card_np"
+    android:id="@+id/cons_card_cv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#000000"
-    tools:context=".view.NowPlayingActivity">
+    tools:context=".view.activity.NowPlayingActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_np"
+        android:id="@+id/cv_cv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -25,12 +25,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cons_cvcard_np"
+            android:id="@+id/cons_cvcard_cv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageposter_np"
+                android:id="@+id/imageposter_cv"
                 android:layout_width="88dp"
                 android:layout_height="104dp"
                 android:layout_marginStart="16dp"
@@ -41,43 +41,45 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
 
-            <TextView
-                android:id="@+id/lbl_title_np"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="TextView"
-                android:textColor="#D4AF37"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/imageposter_cv"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageposter_np"
-                app:layout_constraintTop_toTopOf="@+id/imageposter_np" />
+                app:layout_constraintStart_toEndOf="@+id/imageposter_cv"
+                app:layout_constraintTop_toTopOf="@+id/imageposter_cv">
 
-            <TextView
-                android:id="@+id/lbl_overview_np"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:maxLines="2"
-                android:text="TextView"
-                android:textColor="#D4AF37"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_title_np"
-                app:layout_constraintStart_toStartOf="@+id/lbl_title_np"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_title_np" />
+                <TextView
+                    android:id="@+id/lbl_title_cv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:text="TextView"
+                    android:textColor="#D4AF37"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/lbl_rd_np"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageposter_np"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_overview_np"
-                app:layout_constraintStart_toStartOf="@+id/lbl_overview_np" />
+                <TextView
+                    android:id="@+id/lbl_overview_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="2"
+                    android:text="TextView"
+                    android:textColor="#D4AF37" />
+
+                <TextView
+                    android:id="@+id/lbl_rd_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

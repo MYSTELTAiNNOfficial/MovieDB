@@ -1,4 +1,4 @@
-package com.spr.moviedb.view;
+package com.spr.moviedb.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -24,7 +24,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_now_playing);
         vm = new ViewModelProvider(NowPlayingActivity.this).get(MovieVM.class);
         rv_np = findViewById(R.id.rv_np);
-        vm.getNowPlaying();
+//        vm.getNowPlaying();
         vm.getResultGetNowPlaying().observe(NowPlayingActivity.this, showNowPlaying);
     }
 
@@ -33,7 +33,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         public void onChanged(NowPlaying nowPlaying) {
             rv_np.setLayoutManager(new LinearLayoutManager(NowPlayingActivity.this));
             NowPlayingAdapter adapter = new NowPlayingAdapter(NowPlayingActivity.this);
-            adapter.setListNp(nowPlaying.getResults());
+//            adapter.setListNp(nowPlaying.getResults());
             rv_np.setAdapter(adapter);
         }
     };

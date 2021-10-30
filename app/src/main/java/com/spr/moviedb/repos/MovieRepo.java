@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData;
 import com.spr.moviedb.helper.Const;
 import com.spr.moviedb.model.Movies;
 import com.spr.moviedb.model.NowPlaying;
+import com.spr.moviedb.model.Popular;
+import com.spr.moviedb.model.Search;
+import com.spr.moviedb.model.UpComing;
 import com.spr.moviedb.retrofit.ApiService;
 
 import retrofit2.Call;
@@ -55,6 +58,57 @@ public class MovieRepo {
 
             @Override
             public void onFailure(Call<NowPlaying> call, Throwable t) {
+
+            }
+        });
+        return result;
+    }
+
+    public MutableLiveData<UpComing> getUpComingData(){
+        final MutableLiveData<UpComing> result = new MutableLiveData<>();
+
+        ApiService.endPoint().getUpComing(Const.API_KEY).enqueue(new Callback<UpComing>() {
+            @Override
+            public void onResponse(Call<UpComing> call, Response<UpComing> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<UpComing> call, Throwable t) {
+
+            }
+        });
+        return result;
+    }
+
+    public MutableLiveData<Popular> getPopularData(){
+        final MutableLiveData<Popular> result = new MutableLiveData<>();
+
+        ApiService.endPoint().getPopular(Const.API_KEY).enqueue(new Callback<Popular>() {
+            @Override
+            public void onResponse(Call<Popular> call, Response<Popular> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Popular> call, Throwable t) {
+
+            }
+        });
+        return result;
+    }
+
+    public MutableLiveData<Search> getSearchData(String query){
+        final MutableLiveData<Search> result = new MutableLiveData<>();
+
+        ApiService.endPoint().getSearch(query,Const.API_KEY).enqueue(new Callback<Search>() {
+            @Override
+            public void onResponse(Call<Search> call, Response<Search> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Search> call, Throwable t) {
 
             }
         });

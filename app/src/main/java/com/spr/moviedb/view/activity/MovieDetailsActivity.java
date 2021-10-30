@@ -1,4 +1,4 @@
-package com.spr.moviedb.view;
+package com.spr.moviedb.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -58,7 +58,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
             String rd = movies.getRelease_date();
             String status = movies.getStatus();
             String img_path = movies.getPoster_path().toString();
-            String full_path = Const.COVER_URL + img_path;
+            String full_path = Const.IMAGE_URL + img_path;
             for (int i = 0; i<movies.getGenres().size(); i++){
                 if (i==movies.getGenres().size()-1) { // i = 1, genre size = 2-1 = 1
                     genres += movies.getGenres().get(i).getName();

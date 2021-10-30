@@ -16,37 +16,37 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.spr.moviedb.R;
 import com.spr.moviedb.helper.Const;
-import com.spr.moviedb.model.NowPlaying;
+import com.spr.moviedb.model.Search;
 
 import java.util.List;
 
-public class NowPlayingAdapter  extends RecyclerView.Adapter<NowPlayingAdapter.CardViewViewHolder> {
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.CardViewViewHolder> {
 
     private Context context;
-    private List<NowPlaying.Results> listNp;
-    private List<NowPlaying.Results> getListNp(){
-        return listNp;
+    private List<Search.Results> listSc;
+    private List<Search.Results> getListNp(){
+        return listSc;
     }
-    public void setListNp(List<NowPlaying.Results> listNp){
-        this.listNp = listNp;
+    public void setListSc(List<Search.Results> listSc){
+        this.listSc = listSc;
         notifyDataSetChanged();
     }
-    public NowPlayingAdapter(Context context){
+    public SearchAdapter(Context context){
         this.context = context;
     }
 
     @NonNull
     @Override
-    public NowPlayingAdapter.CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SearchAdapter.CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_now_playing
                 ,parent
                 ,false);
-        return new NowPlayingAdapter.CardViewViewHolder(view);
+        return new SearchAdapter.CardViewViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CardViewViewHolder holder, int position) {
-        final NowPlaying.Results results = getListNp().get(position);
+    public void onBindViewHolder(@NonNull SearchAdapter.CardViewViewHolder holder, int position) {
+        final Search.Results results = getListNp().get(position);
         holder.lbl_title_cv.setText(results.getTitle());
         holder.lbl_overview_cv.setText(results.getOverview());
         holder.lbl_rd_cv.setText(results.getRelease_date());
@@ -62,14 +62,14 @@ public class NowPlayingAdapter  extends RecyclerView.Adapter<NowPlayingAdapter.C
 
                 Bundle bundle = new Bundle();
                 bundle.putString("movie_id",""+results.getId());
-                Navigation.findNavController(view).navigate(R.id.action_nowPlayingFragment_to_movieDetailFragment,bundle);
+                Navigation.findNavController(view).navigate(R.id.action_searchFragment_to_movieDetailFragment,bundle);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return listNp.size();
+        return listSc.size();
     }
 
     public class CardViewViewHolder extends RecyclerView.ViewHolder {

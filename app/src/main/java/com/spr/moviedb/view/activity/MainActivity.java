@@ -1,4 +1,4 @@
-package com.spr.moviedb.view;
+package com.spr.moviedb.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 String ori = movies.getOriginal_title();
                 String rd = movies.getRelease_date();
                 String img_path = movies.getPoster_path().toString();
-                String full_path = Const.COVER_URL + img_path;
+                String full_path = Const.IMAGE_URL + img_path;
                 txt_show_main.setText(title);
                 txt_rd_main.setText(rd);
                 txt_ori_main.setText(ori);

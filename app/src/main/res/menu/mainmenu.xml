@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nowPlayingFragment"
+        android:icon="@drawable/ic_nowplaying_24"
+        android:title="Now Playing" />
+    <item
+        android:id="@+id/upComingFragment"
+        android:icon="@drawable/ic_upcoming_24"
+        android:title="Up Coming" />
+    <item
+        android:id="@+id/PopularFragment"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Popular" />
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_search_24"
+        android:title="Search" />
+</menu>
